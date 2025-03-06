@@ -27,7 +27,15 @@ it("Find an element from a list of elements by index", ()=>{
     cy.visit("cypress/fixtures/index.html");
     cy.get('h1').eq(2);
 });
-it.only("Find elements with filter", ()=>{
+it("Find elements with filter", ()=>{
     cy.visit("cypress/fixtures/index.html");
     cy.get('li').filter('.web');
+});
+it("Find elements by children", ()=>{
+    cy.visit("cypress/fixtures/index.html");
+    cy.get('.course-list').children();
+});
+it.only("Find elements by Find command", ()=>{
+    cy.visit("cypress/fixtures/index.html");
+    cy.get('.course-list').find('.web');
 });
